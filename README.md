@@ -1,4 +1,4 @@
-# newrelic-elasticsearch-docker
+# newrelic-elasticsearch
 
 Docker container for [New Relic Elasticsearch plugin](https://github.com/s12v/newrelic-elasticsearch)
 
