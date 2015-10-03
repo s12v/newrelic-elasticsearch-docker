@@ -1,6 +1,6 @@
 # newrelic-elasticsearch-docker
 
-Docker container for New Relic Elasticsearch plugin
+Docker container for [New Relic Elasticsearch plugin](https://github.com/s12v/newrelic-elasticsearch)
 
 
 ## Usage
@@ -24,4 +24,4 @@ newrelic:
     - NEW_RELIC_LICENSE_KEY=itsasecret
 ```
 
-Change your license key and `docker-compose up`.
+Change your license key and run `docker-compose up`.
