@@ -1,17 +1,21 @@
 #!/bin/sh
+set -e
 
-name=${ES_NAME:-docker}
-host=${ES_HOST:-elasticsearch}
-port=${ES_PORT:-9200}
 reconnects=${ES_RECONNECTS:-10}
+
+plugin_path="/nre-config/plugin.json"
+if ! [ -f $plugin_path ]; then
+  plugin_path="plugin.json"
+fi
+
+name=`cat $plugin_path | jq -r '.agents[].name // "elasticsearch"'`
+host=`cat $plugin_path | jq -r '.agents[].host // "elasticsearch"'`
+port=`cat $plugin_path | jq -r '.agents[].port // 9200'`
 
 ./npi config set license_key $NEW_RELIC_LICENSE_KEY
 ./npi prepare me.snov.newrelic-elasticsearch -n -q
 
-sed -i "s/%HOST%/$host/g" plugin.json
-sed -i "s/%PORT%/$port/g" plugin.json
-sed -i "s/%NAME%/$name/g" plugin.json
-cp plugin.json `find . -path './plugins/me.snov.newrelic-elasticsearch/*/config/plugin.json'`
+cp $plugin_path `find . -path './plugins/me.snov.newrelic-elasticsearch/*/config/plugin.json'`
 
 for i in `seq 1 $reconnects`
 do
@@ -19,6 +23,7 @@ do
 	if curl --silent "$host:$port" > /dev/null
 	then
  		echo "OK"
+    echo "find '$name' instance under the plugins tab at https://rpm.newrelic.com"
 		break
  	fi
 	echo "NOT AVAILABLE"
