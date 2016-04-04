@@ -3,6 +3,8 @@
     {
       "host" : "%HOST%",
       "port" : %PORT%,
+      "username" : "%USERNAME%",
+      "password" : "%PASSWORD%",
       "_name": "%NAME%"
     }
   ]

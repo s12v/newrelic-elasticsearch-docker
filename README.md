@@ -25,3 +25,8 @@ newrelic:
 ```
 
 Change your license key and run `docker-compose up`.
+
+
+### Basic Authentication
+
+If your elasticsearch cluster uses basic authentication, you can provide environment variables ES_USER and ES_PASSWD to be added into any API requests.
