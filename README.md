@@ -1,4 +1,4 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/s12v/newrelic-elasticsearch.svg?maxAge=2592000)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/s12v/newrelic-elasticsearch.svg?maxAge=2592000)](https://hub.docker.com/r/s12v/newrelic-elasticsearch/)
 
 # newrelic-elasticsearch
 
