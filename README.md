@@ -1,3 +1,5 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/s12v/newrelic-elasticsearch.svg?maxAge=2592000)]()
+
 # newrelic-elasticsearch
 
 Docker container for [New Relic Elasticsearch plugin](https://github.com/s12v/newrelic-elasticsearch)
