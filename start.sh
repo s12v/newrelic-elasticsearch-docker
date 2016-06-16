@@ -4,7 +4,7 @@ set -e
 
 if [ "$1" = 'newrelic-elasticsearch' ]; then
 	name=${ES_NAME:-docker}
-	host=${ES_HOST:-elasticsearch}
+	host=${ES_HOST:-localhost}
 	port=${ES_PORT:-9200}
 	username=${ES_USER}
 	password=${ES_PASSWD}
