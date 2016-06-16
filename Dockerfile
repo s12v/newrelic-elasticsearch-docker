@@ -9,4 +9,5 @@ RUN ./npi fetch me.snov.newrelic-elasticsearch -y
 COPY plugin.json ./plugin.json
 COPY start.sh ./start.sh
 
-CMD ./start.sh
+ENTRYPOINT ["./start.sh"]
+CMD ["newrelic-elasticsearch"]
