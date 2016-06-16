@@ -7,6 +7,13 @@ Docker container for [New Relic Elasticsearch plugin](https://github.com/s12v/ne
 
 ## Usage
 
+## With docker run
+```
+docker run -e "ES_HOST=example.com" -e "NEW_RELIC_LICENSE_KEY=..." s12v/newrelic-elasticsearch
+```
+
+### With docker-compose
+
 Example `docker-compose.yml` defines a cluster with 3 elasticsearch nodes and 1 New Relic monitoring container:
 
 ```yml
