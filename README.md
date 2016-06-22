@@ -14,29 +14,15 @@ docker run -e "ES_HOST=example.com" -e "NEW_RELIC_LICENSE_KEY=..." s12v/newrelic
 
 ### With docker-compose
 
-Example `docker-compose.yml` defines a cluster with 3 elasticsearch nodes and 1 New Relic monitoring container:
+Example [docker-compose.yml](example/docker-compose.yml) defines a cluster with 3 elasticsearch nodes and 1 New Relic monitoring container. Change your license key and run `docker-compose up`.
 
-```yml
-es1:
-  image: elasticsearch:2.3
-  ports:
-  - "9200:9200"
-es2:
-  image: elasticsearch:2.3
-es3:
-  image: elasticsearch:2.3
-newrelic:
-  image: s12v/newrelic-elasticsearch
-  links:
-    - es1:elasticsearch
-  environment:
-    - ES_HOST=elasticsearch
-    - NEW_RELIC_LICENSE_KEY=itsasecret
-```
+## Configuration
 
-Change your license key and run `docker-compose up`.
+Container accepts following environment parameters:
+ - `ES_NAME` - cluster name
+ - `ES_HOST` - hostname
+ - `ES_PORT` - port
+ - `ES_USER` - username for basic authentication
+ - `ES_PASSWD` - password
+ - `ES_RECONNECTS` - maximum number of connection attempts
 
-
-### Basic Authentication
-
-If your elasticsearch cluster uses basic authentication, you can provide environment variables ES_USER and ES_PASSWD to be added into any API requests.
