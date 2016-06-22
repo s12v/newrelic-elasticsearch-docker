@@ -30,6 +30,7 @@ newrelic:
   links:
     - es1:elasticsearch
   environment:
+    - ES_HOST=elasticsearch
     - NEW_RELIC_LICENSE_KEY=itsasecret
 ```
 
