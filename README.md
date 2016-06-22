@@ -19,10 +19,10 @@ Example [docker-compose.yml](example/docker-compose.yml) defines a cluster with 
 ## Configuration
 
 Container accepts following environment parameters:
- - `ES_NAME` - cluster name
+ - `NEW_RELIC_LICENSE_KEY` - New Relic license key (required)
  - `ES_HOST` - hostname
  - `ES_PORT` - port
+ - `ES_NAME` - cluster name
  - `ES_USER` - username for basic authentication
  - `ES_PASSWD` - password
  - `ES_RECONNECTS` - maximum number of connection attempts
-
