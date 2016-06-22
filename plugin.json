@@ -1,11 +1,11 @@
 {
   "agents": [
     {
-      "host" : "%HOST%",
-      "port" : %PORT%,
-      "username" : "%USERNAME%",
-      "password" : "%PASSWORD%",
-      "_name": "%NAME%"
+      "host": "%HOST%",
+      "port": %PORT%,
+      "name": "%NAME%",
+      "username": "%USERNAME%",
+      "password": "%PASSWORD%"
     }
   ]
 }
