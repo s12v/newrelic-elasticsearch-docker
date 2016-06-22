@@ -18,13 +18,13 @@ Example `docker-compose.yml` defines a cluster with 3 elasticsearch nodes and 1 
 
 ```yml
 es1:
-  image: elasticsearch
+  image: elasticsearch:2.3
   ports:
   - "9200:9200"
 es2:
-  image: elasticsearch
+  image: elasticsearch:2.3
 es3:
-  image: elasticsearch
+  image: elasticsearch:2.3
 newrelic:
   image: s12v/newrelic-elasticsearch
   links:
