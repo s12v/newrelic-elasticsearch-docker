@@ -24,8 +24,8 @@ if [ "$1" = 'newrelic-elasticsearch' ]; then
 
 	for i in `seq 1 $reconnects`
 	do
-	 	echo -n "Trying $host:$port... "
-		if curl --silent "$host:$port" > /dev/null
+	 	echo -n "Trying $protocol://$host:$port... "
+		if curl --silent "$protocol://$host:$port" > /dev/null
 		then
 	 		echo "OK"
 			break
