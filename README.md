@@ -25,4 +25,5 @@ Container accepts following environment parameters:
  - `ES_NAME` - cluster name
  - `ES_USER` - username for basic authentication
  - `ES_PASSWD` - password
+ - `ES_PROTOCOL` - protocol (http or https)
  - `ES_RECONNECTS` - maximum number of connection attempts

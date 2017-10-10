@@ -9,6 +9,7 @@ if [ "$1" = 'newrelic-elasticsearch' ]; then
 	username=${ES_USER}
 	password=${ES_PASSWD}
 	reconnects=${ES_RECONNECTS:-10}
+        protocol=${ES_PROTOCOL:-http}
 
 	./npi config set license_key $NEW_RELIC_LICENSE_KEY
 	./npi prepare me.snov.newrelic-elasticsearch -n -q
@@ -18,12 +19,13 @@ if [ "$1" = 'newrelic-elasticsearch' ]; then
 	sed -i "s/%NAME%/$name/g" plugin.json
 	sed -i "s/%USERNAME%/$username/g" plugin.json
 	sed -i "s/%PASSWORD%/$password/g" plugin.json
+        sed -i "s/%PROTOCOL%/$protocol/g" plugin.json
 	cp plugin.json `find . -path './plugins/me.snov.newrelic-elasticsearch/*/config/plugin.json'`
 
 	for i in `seq 1 $reconnects`
 	do
-	 	echo -n "Trying $host:$port... "
-		if curl --silent "$host:$port" > /dev/null
+	 	echo -n "Trying $protocol://$host:$port... "
+		if curl --silent "$protocol://$host:$port" > /dev/null
 		then
 	 		echo "OK"
 			break

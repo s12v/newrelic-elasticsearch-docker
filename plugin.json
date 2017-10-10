@@ -6,7 +6,7 @@
       "name": "%NAME%",
       "username": "%USERNAME%",
       "password": "%PASSWORD%",
-      "_protocol": "Optional. Default 'http'. Rename to 'protocol' and set to 'https' if needed.",
+      "protocol": "%PROTOCOL%",
       "_basePath": "Optional. API path on server. Default '/'. Rename to 'basePath' if you need to customize it"
     }
   ]
