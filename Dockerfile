@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM openjdk:8-jre
 MAINTAINER Sergey Novikov <snov@snov.me>
 
 RUN UNATTENDED=true bash -c "$(curl -sSL https://download.newrelic.com/npi/release/install-npi-linux-debian-x64.sh)"
